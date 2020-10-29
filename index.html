@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Carta Web de Cafetería" />
+        <title>Carta Cafetería KM16</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <img class="topImg" style="width: 100%;" src="cafe.jpg" />
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+        <div className="App">
+            <style type="text/css">
+                ul.leaders {
+                    max-width: 100%;
+                    padding: 0;
+                    overflow-x: hidden;
+                    list-style: none;
+                }
+                ul.leaders li:before {
+                    float: left;
+                    width: 0;
+                    white-space: nowrap;
+                    color: #000;
+                    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+                }
+                ul.leaders span:first-child {
+                    font-weight: 50;
+                    letter-spacing: 0px;
+                    padding-right: 0.33em;
+                    background-color: rgb(240, 240, 255);
+                }
+                ul.leaders span + span {
+                    float: right;
+                    padding-left: 0.33em;
+                    background-color: rgb(240, 240, 255);
+                }
+                ul.leaders span + span::after {
+                    content: " €";
+                    padding-right: 0.15em;
+                    font-size: 0.8em;
+                }
+                .li {
+                    margin-top: 30px;
+                }
+                .fancy-rule {
+                    border: none;
+                    width: 100%;
+                    overflow: hidden;
+                    height: 20px;
+                    text-align: center;
+                    color: #d9d9d9;
+                }
+                .rgba {
+                    color: rgba(0, 0, 0, 0.15);
+                }
+                .fancy-rule.asterism:before {
+                    content: "o————|| ⧖ ||————o";
+                    letter-spacing: -1px;
+                }
+                /* Page setup & Styling */
+                *::selection {
+                    background-color: #1a1a1a;
+                    color: aliceblue;
+                }
+                body {
+                    align-content: center;
+                    max-width: 600px;
+                    background-color: rgb(240, 240, 255);
+                    color: rgb(0, 0, 0);
+                    font-family: "Roboto", sans-serif;
+                }
+                section {
+                    position: absolute;
+                    left: calc(100% - 14em);
+                    width: 100%;
+                }
+                .inf {
+                    font-size: 0.8em;
+                    /* margin-top: -10px; */
+                }
+                h2 {
+                    margin-top: 10px;
+                }
+                .logo {
+                    width: 160px;
+                }
+                .cabeza {
+                    background-color: #ff0000;
+                    text-align: center;
+                    border-radius: 1em;
+                }
+                hr {
+                    max-width: 50%;
+                    border: 1px solid black;
+                }
+                .cent {
+                    text-align: center;
+                }
+                h3 {
+                    display: inline-block;
+                }
+                .imgMenu {
+                    vertical-align: middle;
+                    width: 100px;
+                }
+                .menuName {
+                    display: inline;
+                }
+                .topinf {
+                    font-size: 0.8em;
+                    margin-top: -20px;
+                    margin-bottom: 30px;
+                }
+                .cartaimg{
+                    width: 100%;
+                }
+            </style>
+            <div class="container">
+                <div class="cabeza">
+                    <img
+                        class="logo"
+                        src="./cepsalogo.jpg"
+                        alt="Girl in a jacket"
+                    />
+                </div>
+                <div class="cent">
+                    <h2>Cafetería KM16</h2>
+                    <div class="topinf">Autopista del norte, KM 16</div>
+                </div>
+                <p
+                    style="
+                        background-color: rgb(255, 189, 230);
+                        text-align: justify;
+                    "
+                >
+                    <small>
+                        <b>¡Recomandación COVID-19! </b><br />
+                        "El/la cliente debe acceder al bar o restaurante con la
+                        mascarilla puesta en todo momento, excepto en el momento
+                        del consumo, por lo que la tendra que tener puesta al
+                        sentarse, pedir comida y/o bebida y hasta que el
+                        camarero/a le lleve las consumiciones, que es cuando
+                        podra quitársela. Una vez acabadas las consumiciones,
+                        volverá a ponérsela aunque siga sentado/a en la mesa. En
+                        caso de que el cliente/a tenga que tenga que levantarse
+                        para ir al WC, comprar tabaco, etc. el uso de la
+                        mascarilla será obligatorio, lo mismo cuando se pague y
+                        se abandone el local. Por deferencia con al camarero/a,
+                        el cliente deberá ponerse tambien la mascarilla cuando
+                        pida o por algún motivo tenga que entablar una
+                        conversacion con el camarero/a aunque esté consumiendo"
+                    </small>
+                </p>
+                
+                <div style="width: 100%;">
+                    <img
+                        class="imgMenu"
+                        style="width: 100px;"
+                        src="bocadillos.png"
+                    />
+                    <h3>Bocadillos</h3>
+                </div>
+                <ul class="leaders">
+                    <li>
+                        <span>Lomo, ensalada y queso</span>
+                        <span>2.40</span>
+                    </li>
+                    <li>
+                        <span>Pollo, ensalada y queso</span>
+                        <span>2.40</span>
+                    </li>
+                    <li>
+                        <span>Mechada y queso</span>
+                        <span>2.50</span>
+                    </li>
+                    <li>
+                        <span>Tortilla</span>
+                        <span>2.30</span>
+                    </li>
+                    <li>
+                        <span>Queso blanco y jamón</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Pata</span>
+                        <span>2.60</span>
+                    </li>
+                    <li>
+                        <span>Guayaba y queso blanco</span>
+                        <span>2.40</span>
+                    </li>
+                    <li>
+                        <span>Chacina</span>
+                        <span>1.50</span>
+                    </li>
+                    <div class="inf">Suplemento 0.20€</div>
+                </ul>
+                <hr class="fancy-rule asterism rgba" />
+                <div>
+                    <img
+                        class="imgMenu"
+                        style="width: 90px;"
+                        src="pulgas.png"
+                    />
+                    <h3 class="menuName">Pulgas</h3>
+                </div>
+                <ul class="leaders">
+                    <li>
+                        <span>Serrano y tomate</span>
+                        <span>1.50</span>
+                    </li>
+                    <li>
+                        <span>Pata y tomate</span>
+                        <span>1.50</span>
+                    </li>
+                    <li>
+                        <span>Queso blanco y tomate</span>
+                        <span>1.40</span>
+                    </li>
+                    <li>
+                        <span>Chorizo y queso amarillo</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Tortilla y queso amarillo</span>
+                        <span>1.40</span>
+                    </li>
+                    <li>
+                        <span>Queso blanco y guallaba</span>
+                        <span>1.40</span>
+                    </li>
+                    <li>
+                        <span>Queso blanco y jamón</span>
+                        <span>1.40</span>
+                    </li>
+                </ul>
+                <hr class="fancy-rule asterism rgba" />
+                <div>
+                    <img
+                        class="imgMenu"
+                        style="width: 80px; padding-left: 5px;"
+                        src="sandwich.png"
+                    />
+                    <h3 class="menuName">Croissant/Sandwich</h3>
+                </div>
+                <ul class="leaders">
+                    <li>
+                        <span>Pollo y ensalada</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Lomo y ensalada</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Tortilla y ensalada</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Queso blanco</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Mechada</span>
+                        <span>2.20</span>
+                    </li>
+                    <li>
+                        <span>Chacina</span>
+                        <span>1.80</span>
+                    </li>
+                    <li>
+                        <span>Mixto</span>
+                        <span>1.50</span>
+                    </li>
+                </ul>
+                <hr class="fancy-rule asterism rgba" />
+                <div>
+                    <img class="imgMenu" style="width: 90px;" src="dulce.png" />
+                    <h3 class="menuName">Dulces</h3>
+                </div>
+                <ul class="leaders">
+                    <li>
+                        <span>Rosquete de batata</span>
+                        <span>1.20</span>
+                    </li>
+                    <li>
+                        <span>Rosquete de limón</span>
+                        <span>0.50</span>
+                    </li>
+                    <li>
+                        <span>Lazos</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Tarta de manzana</span>
+                        <span>1.50</span>
+                    </li>
+                    <li>
+                        <span>Tarta de almendras</span>
+                        <span>1.80</span>
+                    </li>
+                    <li>
+                        <span>Tubo de crema</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Milhojas</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Donuts</span>
+                        <span>1.25</span>
+                    </li>
+                </ul>
+                <hr class="fancy-rule asterism rgba" />
+                <div>
+                    <img class="imgMenu" style="width: 90px;" src="plato.png" />
+                    <h3 class="menuName">Platos combinados</h3>
+                </div>
+                <ul class="leaders">
+                    <li>
+                        <span>Lomo</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Pechuga de pollo</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Hamburguesa</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Croquetas</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Tiras de pollo</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Nugget de pollo</span>
+                        <span>3.80</span>
+                    </li>
+                    <li>
+                        <span>Merluza empanada</span>
+                        <span>3.80</span>
+                    </li>
+                    <div class="inf">todos con ensalada y papas fritas</div>
+                </ul>
+                <div>
+                    <img class="imgMenu" src="infusion.png" />
+                    <h3 class="menuName">Infusiones</h3>
+                </div>                
+                <hr class="fancy-rule asterism rgba" />
+                <ul class="leaders">
+                    <li>
+                        <span>Té</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Infusion Hills</span>
+                        <span>1.20</span>
+                    </li>
+                    <li>
+                        <span>Tila</span>
+                        <span>0.95</span>
+                    </li>
+                    <li>
+                        <span>Manzanilla</span>
+                        <span>0.95</span>
+                    </li>
+                    <li>
+                        <span>Té con leche</span>
+                        <span>1.00</span>
+                    </li>
+                    <li>
+                        <span>Té con limón</span>
+                        <span>1.20</span>
+                    </li>
+                </ul>
+               <img class="cartaimg" src="foto infusion.jpg" />
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
